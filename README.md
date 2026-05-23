@@ -13,7 +13,7 @@ They are provided so reviewers and editors can verify methods, reproduce key wor
 ## Online resources
 
 - **[National prototype building database](http://8.166.131.116/#/)**  
-  Interactive web portal for simulation outputs from the national typical building database (China Building Energy Model Database).
+  Interactive web portal for simulation outputs from the national prototype building database (China Building Energy Model Database).
 
 - **[Shanghai building heating EUI visualization](http://8.138.56.183:8090/webgl/examples/webgl/shanghaiHeating.html)**  
   WebGL map of Shanghai showing building-level heating energy use intensity (EUI, kWh) by building type.
