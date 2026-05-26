@@ -1,0 +1,13 @@
+ ReadVarsESO
+ processing:C:\Users\sophie\multi_runs\idf_2\in.rvi
+ input file:f:\code_all\reshape\code\code\result\demo\320100NANJINGSHI_3\320100NANJINGSHI_3.eso
+ output file:f:\code_all\reshape\code\code\result\demo\320100NANJINGSHI_3\320100NANJINGSHI_3.csv
+ getting all vars from:f:\code_all\reshape\code\code\result\demo\320100NANJINGSHI_3\320100NANJINGSHI_3.eso
+  number variables requested for output=          24
+ ReadVars Run Time=00hr 00min  0.84sec
+ ReadVarsESO program completed successfully.
+ ReadVarsESO
+ processing:C:\Users\sophie\multi_runs\idf_2\in.mvi
+ Requested ESO file=f:\code_all\reshape\code\code\result\demo\320100NANJINGSHI_3\320100NANJINGSHI_3.mtr
+ does not exist.  ReadVarsESO program terminated.
+ ReadVarsESO program terminated.
