@@ -23,66 +23,52 @@ They are provided so reviewers and editors can verify methods, reproduce key wor
 Building models are produced and simulated through the following pipeline:
 
 ```
-GIS shapefile (.shp)  →  GIS2IDF  →  IDF settings  →  simulation-ready IDF  →  simulation results
+City GIS inputs  →  GIS2IDF  →  ready IDF  →  EnergyPlus simulation  →  results
 ```
 
 | Stage | Description |
 |-------|-------------|
-| **GIS shapefile** | City building footprints and attributes in GIS vector format. |
-| **GIS2IDF** | Geometry and metadata from GIS are converted into EnergyPlus IDF geometry and base objects. |
-| **IDF settings** | Template-specific parameters (construction, HVAC, schedules, etc.) are applied to each building IDF. |
-| **Simulation-ready IDF** | Final IDF files checked and prepared for EnergyPlus runs. |
-| **Results** | Post-processed simulation outputs (e.g., EUI, end-use breakdown) for analysis and visualization. |
+| **City GIS inputs** | Building footprints and attributes, local weather, and building-parameter settings for each pilot city. |
+| **GIS2IDF** | GIS data are turned into building EnergyPlus models (geometry and associated model setup). |
+| **Ready IDF** | Per-building IDF files prepared for simulation. |
+| **EnergyPlus simulation** | Batch runs using the city weather file(s). |
+| **Results** | Simulation outputs for analysis and comparison with published figures or online visualizations. |
 
 ## Data in this repository
 
-This repository provides materials for three pilot cities:
+Materials are organized for three pilot cities:
 
-| City | GIS / building data | Weather file |
-|------|---------------------|--------------|
+| City | GIS / building data | Weather |
+|------|---------------------|---------|
 | **Nanjing** | Included | Included |
 | **Shanghai** | Included | Included |
 | **Wuhan** | Included | Included |
 
-*(Paths and file naming will be documented once data are uploaded.)*
-
-Weather files are paired with each city so that simulations use consistent local climate inputs.
+Weather includes baseline and scenario files aligned with each city where applicable.
 
 ## Code organization
 
-Scripts are split into modules to match the workflow and to support **quality checks** at each step:
+Workflow scripts and working folders are under **`Script/`**:
 
-| Module | Role |
-|--------|------|
-| **`GIS2IDF`** | Shapefile ingestion, footprint processing, and initial IDF generation from GIS. |
-| **`idf_settings`** | Assignment and editing of IDF templates, constructions, systems, and run parameters. |
-
-Additional utilities (batch runs, result aggregation, QC reports) will be added as the codebase is finalized.
-
-Suggested layout (to be populated with your scripts):
-
-```
-├── data/
-│   ├── nanjing/
-│   ├── shanghai/
-│   └── wuhan/
-├── GIS2IDF/
-├── idf_settings/
-└── (results / docs as needed)
-```
+| Item | Role |
+|------|------|
+| **`1_GIS2IDF.py`** | Generate ready IDF files from city GIS and input settings. |
+| **`2_BatchSimulation.py`** | Run EnergyPlus in batch on ready IDF files and write outputs. |
+| **`input/`** | GIS shapefiles, weather (EPW), and building-parameter settings. |
+| **`ready_idf/`** | Generated IDF files by city (and demo subsets where provided). |
+| **`result/`** | Simulation output folders. |
 
 ## Replication notes
 
-1. Start from city GIS inputs under `data/`.
-2. Run **GIS2IDF** to generate base IDFs.
-3. Run **idf_settings** to produce simulation-ready IDFs.
-4. Execute EnergyPlus (external) with the provided weather files.
-5. Compare outputs with published figures or the online visualizations above.
+1. Place or confirm city inputs under `Script/input/` (GIS, weather, settings).
+2. Run **`1_GIS2IDF.py`** to produce IDFs under `Script/ready_idf/`.
+3. Run **`2_BatchSimulation.py`** (with EnergyPlus installed locally) to simulate and obtain results under `Script/result/`.
+4. Compare outputs with the paper and the online resources above.
 
 ## Status
 
-- README and workflow description: current.
-- City data, weather files, and code modules: **to be added** in upcoming commits.
+- Workflow scripts, city inputs, sample ready IDFs, and demo results are included under `Script/`.
+- Full national-scale extensions and additional QC utilities may be added as the release is finalized.
 
 ## Citation
 
