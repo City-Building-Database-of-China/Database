@@ -102,17 +102,17 @@ if __name__ == "__main__":
         "Nanjing_2020.epw"
     )
 
-    # Small demo subset (see ready_idf/demo/); full city IDFs are under ready_idf/320100NANJINGSHI/
+    # Demo package: demo/ready_idf/ (inputs) -> demo/result/ (outputs)
     idf_root = os.path.join(
         base_dir,
-        "ready_idf",
-        "demo"
+        "demo",
+        "ready_idf"
     )
 
     output_root = os.path.join(
         base_dir,
-        "result",
-        "demo"
+        "demo",
+        "result"
     )
 
     run_energyplus_batch(
