@@ -153,7 +153,7 @@ Workflow scripts and data folders sit at the **repository root**:
 | Data | Role |
 |------|------|
 | **CityBuilding** (unzip `input/GIS/CityBuilding/*.zip`, read `.shp`) | All individual building footprints in the city. |
-| **Prototype** (`input/GIS/Prototype/*.shp`) | Typical buildings; source of geometry and IDF index **`bh`**. |
+| **Prototype** (`input/GIS/Prototype/*.shp`) | Prototype buildings; source of geometry and IDF index **`bh`**. |
 | **`BuildID`** | Join key between Prototype and CityBuilding. |
 | **`bh`** | Prototype index; matches IDF filename suffix and `1_GIS2IDF.py` output. |
-| **`LandNum`** + **`Cluster`** | Together assign each building to the correct **`proptype`** (prototype type) for mapping typical models to individual footprints. |
+| **`LandNum`** + **`Cluster`** | Together assign each building to the correct **`proptype`** (prototype type) for mapping prototype models to individual footprints. |
