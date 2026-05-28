@@ -145,3 +145,15 @@ Workflow scripts and data folders sit at the **repository root**:
 
 - Workflow scripts, sample GIS inputs, weather files, full-city ready IDFs, and a self-contained `demo/` package are included at the repository root.
 - Full national-scale extensions and additional QC utilities may be added as the release is finalized.
+
+## Post-process: scale-up to city-wide buildings
+
+`1_GIS2IDF.py` builds **prototype** IDFs from `input/GIS/Prototype/` (one file per **`bh`**, e.g. `320100NANJINGSHI_5.idf`). **City-wide scale-up** is described in the manuscript; this repository provides the GIS and IDF data used in that step, not a separate scale-up script.
+
+| Data | Role |
+|------|------|
+| **CityBuilding** (unzip `input/GIS/CityBuilding/*.zip`, read `.shp`) | All individual building footprints in the city. |
+| **Prototype** (`input/GIS/Prototype/*.shp`) | Typical buildings; source of geometry and IDF index **`bh`**. |
+| **`BuildID`** | Join key between Prototype and CityBuilding. |
+| **`bh`** | Prototype index; matches IDF filename suffix and `1_GIS2IDF.py` output. |
+| **`LandNum`** + **`Cluster`** | Together assign each building to the correct **`proptype`** (prototype type) for mapping typical models to individual footprints. |
