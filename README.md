@@ -87,15 +87,7 @@ Where applicable, distribution of certain original surveying products is subject
 | **Shanghai** | 310000 | Yes | Yes | 113 | IDFs + stock GIS |
 | **Wuhan** | 420100 | Yes | Yes | 95 | IDFs + stock GIS |
 
-Weather for the three-megacity workflow lives under `input/EPW/` (baseline `*_2020.epw` plus future climate scenarios for Nanjing, Shanghai, and Wuhan). Additional future-climate EPWs for **10 representative cities** are documented at the end of this README (`Climate_Change_epw/`).
-
-Future climate files are labeled by **SSP** pathways, which correspond to the commonly cited RCP levels as follows:
-
-| SSP (used in this repository) | Corresponding RCP |
-|-------------------------------|-------------------|
-| **SSP1-2.6** | RCP2.6 |
-| **SSP2-4.5** | RCP4.5 |
-| **SSP5-8.5** | RCP8.5 |
+Weather for the three-megacity workflow lives under `input/EPW/` (baseline `*_2020.epw` plus future climate scenarios for Nanjing, Shanghai, and Wuhan). Additional future-climate EPWs for **10 representative cities** are documented at the end of this README (`Climate_Change_epw/`). Future climate files are labeled by **SSP** pathways (**SSP1-2.6**, **SSP2-4.5**, **SSP5-8.5**).
 
 ### GIS inputs: Prototype, CityBuilding, and Archetype2stock
 
@@ -223,17 +215,9 @@ Workflow scripts (`1_`–`3_`), three-city Prototype and CityBuilding GIS, weath
 
 Separate from the three-megacity workflow weather under `input/EPW/`, this folder provides **future-climate EnergyPlus weather files** for **10 representative cities** used in climate-scenario analysis.
 
-Scenario labels use **SSP** pathways. Filenames follow the same convention (e.g. `*_SSP1-2.6_2040.epw`). Correspondence to RCP:
-
-| SSP (filename / label) | Corresponding RCP |
-|------------------------|-------------------|
-| **SSP1-2.6** | RCP2.6 |
-| **SSP2-4.5** | RCP4.5 |
-| **SSP5-8.5** | RCP8.5 |
-
 | Item | Detail |
 |------|--------|
 | **Cities** | **10 representative cities**: Changsha, Chengdu, Chongqing, Fuzhou, Hefei, Nanchang, Nanjing, Shanghai, Suzhou, Wuhan |
-| **Scenarios** | SSP1-2.6 / SSP2-4.5 / SSP5-8.5 × years 2040 / 2060 (6 EPW files per city) |
+| **Scenarios** | SSP1-2.6 / SSP2-4.5 / SSP5-8.5 × years 2040 / 2060 (6 EPW files per city; e.g. `*_SSP1-2.6_2040.epw`) |
 | **Layout** | One subfolder per city (e.g. `Climate_Change_epw/NANJING/*.epw`) |
 | **License** | See `Climate_Change_epw/LICENSE` |
