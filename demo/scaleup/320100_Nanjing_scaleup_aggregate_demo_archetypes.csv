@@ -1,0 +1,4 @@
+﻿archetype_id,bh,landUseTyp,n_buildings,total_floor_area_m2,total_heating_kWh,mean_EUI_kWh_m2
+1_5,1,Residential_2,2773,7445491.5838,250655082.2989,33.6654
+7_2,2,Administration,3,84276.5020,1997195.4094,23.6981
+1_2,3,Residential_2,3476,13479379.9478,520417272.5099,38.6084

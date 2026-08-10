@@ -1,0 +1,13 @@
+# Local / machine-specific
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# EnergyPlus scratch (if re-running full-city batches)
+result/
+multi_runs/
+*.err.bak

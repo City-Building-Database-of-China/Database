@@ -1,0 +1,4 @@
+﻿bh,source_table,conditioned_area_m2,heating_district_GJ,heating_kWh,heating_EUI_kWh_m2,archetype_id,landUseTyp
+1,demo\result\320100NANJINGSHI_1\320100NANJINGSHI_1Table.htm,3001.520000,363.770000,101047.222222,33.665350,1_5,Residential_2
+2,demo\result\320100NANJINGSHI_2\320100NANJINGSHI_2Table.htm,45052.080000,3843.540000,1067650.000000,23.698129,7_2,Administration
+3,demo\result\320100NANJINGSHI_3\320100NANJINGSHI_3Table.htm,3864.660000,537.150000,149208.333333,38.608398,1_2,Residential_2
