@@ -48,7 +48,7 @@ python run_demo.py scaleup
 
 # 3) Optional: re-simulate the Nanjing demo IDFs
 #    Windows example (use your installed folder):
-#      set ENERGYPLUS_DIR=C:\EnergyPlusV23-2-0
+#      set ENERGYPLUS_DIR=C:\EnergyPlusV23-1-0
 python run_demo.py simulate
 
 # 4) Optional: regenerate Nanjing prototype IDFs from Prototype GIS
@@ -58,6 +58,10 @@ python run_demo.py idf
 You can still call `1_GIS2IDF.py`, `2_BatchSimulation.py`, and `3_ScaleUp.py` directly. Shared paths and EnergyPlus discovery live in `config.py` (`ENERGYPLUS_DIR` environment variable preferred).
 
 **Quick path:** open `demo/` → `python run_demo.py scaleup` → inspect `demo/scaleup/`. Pre-run EnergyPlus outputs are already under `demo/result/`.
+
+**Typical install time** on a normal desktop computer: about **10–15 minutes**. First install the Python packages with `pip install -r requirements.txt` (pandas, geopandas, eppy, and related libraries); that step is usually a few minutes if wheels are available, and can take closer to 10 minutes on Windows. If you only want to reproduce the scale-up tables, that is enough. If you also want to re-run EnergyPlus, download and install **EnergyPlus 23.1** (~145 MB installer) and point `ENERGYPLUS_DIR` at the install folder; that extra step is typically another 3–5 minutes.
+
+**Expected run time for the demo** on a normal desktop computer: the four steps are Prototype GIS → IDF generation → EnergyPlus 23.1 → scale-up. Sequential estimates are about **20–40 minutes** for the bundled Nanjing mini-demo (**3 IDFs**), about **5–12 hours** for Nanjing (**68 IDFs**), about **8–20 hours** for Shanghai (**113 IDFs**), and about **6–16 hours** for Wuhan (**95 IDFs**). GIS-to-IDF dominates; EnergyPlus is much faster if several jobs run in parallel.
 
 ## Workflow overview
 
@@ -182,7 +186,7 @@ demo/
 
 **Repository data paths (portable).** Paths are centralized in `config.py` (`REPO_ROOT`, `input/`, `demo/`, `ready_idf/`).
 
-**EnergyPlus install paths (machine-specific).** EnergyPlus is **not** shipped here. Set `ENERGYPLUS_DIR` to your EnergyPlus install folder (recommended; tested with **23.2**). The runner auto-detects the version tag from the folder name. Run `python run_demo.py check` to verify detection.
+**EnergyPlus install paths (machine-specific).** EnergyPlus is **not** shipped here. Set `ENERGYPLUS_DIR` to your EnergyPlus install folder (recommended; **EnergyPlus 23.1**). The runner auto-detects the version tag from the folder name. Run `python run_demo.py check` to verify detection.
 
 ## Replication notes
 
